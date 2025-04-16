@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('image_overwrites', function (Blueprint $table) {
             $table->id();
+            $table->string('original_name');
+            $table->string('stored_path');
+            $table->json('exif_data')->nullable(); // store parsed and edited exif
             $table->timestamps();
         });
     }
